@@ -1,202 +1,340 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+
 import heroImage from "../assets/hero-3d.png";
+
 
 function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-[var(--bg)] flex items-center pt-28"
+      className="
+        relative
+        min-h-screen
+        flex
+        items-center
+        overflow-hidden
+        bg-[#FAFBFF]
+        pt-32
+        lg:pt-24
+      "
     >
-      {/* Background */}
+
+      {/* Background Glow */}
 
       <div className="absolute inset-0 -z-10">
 
-        <div className="absolute top-[-120px] right-[-180px] w-[760px] h-[760px] rounded-full bg-[#DCE6FF] blur-[190px] opacity-60"></div>
+        <div
+          className="
+            absolute
+            right-[-220px]
+            top-[-180px]
+            h-[620px]
+            w-[620px]
+            rounded-full
+            bg-[#E7EDFF]
+            blur-[150px]
+            opacity-70
+          "
+        />
 
-        <div className="absolute bottom-[-180px] left-[-120px] w-[520px] h-[520px] rounded-full bg-[#EEF4FF] blur-[170px] opacity-60"></div>
+        <div
+          className="
+            absolute
+            left-[-180px]
+            bottom-[-220px]
+            h-[420px]
+            w-[420px]
+            rounded-full
+            bg-[#F2F5FF]
+            blur-[130px]
+            opacity-80
+          "
+        />
 
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 items-center gap-20">
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-7xl
+          px-6
+          lg:px-10
+        "
+      >
+
+        <div
+          className="
+            grid
+            items-center
+            gap-16
+            lg:grid-cols-2
+          "
+        >
+
 
           {/* LEFT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: .8 }}
-            className="max-w-[560px]"
+            initial={{
+              opacity:0,
+              y:30,
+            }}
+
+            animate={{
+              opacity:1,
+              y:0,
+            }}
+
+            transition={{
+              duration:.8,
+            }}
+
+            className="
+              max-w-[620px]
+            "
           >
 
-            <div className="flex items-center gap-3 mb-8">
+            <span
+              className="
+                inline-flex
+                items-center
+                rounded-full
+                border
+                border-[#E4E7EC]
+                bg-white
+                px-5
+                py-2.5
+                text-xs
+                font-semibold
+                tracking-[0.25em]
+                uppercase
+                text-[#6C7CFF]
+                shadow-sm
+              "
+            >
+              Front-End Developer
+            </span>
 
-              <div className="w-12 h-[2px] bg-[#7C8DFF]" />
+            <h1
+              className="
+                mt-8
+                text-[56px]
+                lg:text-[84px]
+                font-black
+                leading-[0.95]
+                tracking-[-3px]
+                text-[#111827]
+              "
+            >
 
-              <span className="uppercase tracking-[5px] text-sm font-semibold text-[#7C8DFF]">
-                Front-End Developer
-              </span>
-
-            </div>
-
-            <h1 className="text-5xl lg:text-7xl font-black leading-[0.95] tracking-[-2px]">
-
-              <span className="text-[#7C8DFF]">
-                Arwa
-              </span>
-
+              Building
               <br />
 
-              <span className="text-[#111827]">
-                Alneami
-              </span>
+              modern digital
+              <br />
+
+              experiences.
 
             </h1>
 
-            <p className="mt-8 text-lg leading-9 text-[#64748B] max-w-[520px]">
 
-              I build modern websites and web applications with clean code,
-              elegant interfaces and outstanding user experiences focused on
-              performance and usability.
 
+            <p
+              className="
+                mt-8
+                max-w-[520px]
+                text-[17px]
+                leading-8
+                text-[#667085]
+              "
+            >
+              I design and develop modern websites with clean interfaces,
+              thoughtful user experiences, and high performance for businesses
+              that value quality.
             </p>
+
+
 
             {/* Buttons */}
 
-            <div className="mt-12 flex gap-5 flex-wrap">
-
-              <a
-  href="#projects"
-  className="
-    group
-    inline-flex
-    items-center
-    justify-center
-    gap-2
-    h-11
-    px-6
-    pr-10
-    rounded-full
-    bg-[#6C7CFF]
-    text-white
-    font-semibold
-    text-lg
-    shadow-lg
-    transition-all
-    duration-300
-    hover:bg-[#586AF8]
-    hover:-translate-y-1
-    hover:shadow-2xl
-  "
->
-  <span
-    className="
-      flex
-      items-center
-      justify-center
-      w-11
-      h-11
-      rounded-full
-      bg-white
-      text-[#111827]
-      text-xl
-      shrink-0
-      transition-transform
-      duration-300
-      group-hover:rotate-45
-    "
-  >
-    ↗
-  </span>
-
-  <span className="leading-none">
-    View Projects
-  </span>
-</a>
-
-
-              <a
-  href="#contact"
-  className="
-    inline-flex
-    items-center
-    justify-center
-    h-10
-    px-10
-    rounded-full
-    bg-white
-    border
-    border-[#CBD5E1]
-    shadow-lg
-    text-[#111827]
-    text-lg
-    font-semibold
-    transition-all
-    duration-300
-    hover:-translate-y-1
-    hover:border-[#7C8DFF]
-    hover:shadow-xl
-  "
->
-  <span className="leading-none">
-    Contact Me
-  </span>
-</a>
-
-            </div>
-
-          </motion.div>
-
-                    {/* RIGHT */}
-
-          <motion.div
-            initial={{ opacity: 0, scale: .9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: .9 }}
-            className="flex justify-center lg:justify-end"
-          >
 
             <div
               className="
-              relative
-              rounded-[42px]
-              p-8
-              bg-white/45
-              backdrop-blur-2xl
-              border
-              border-white/70
-              shadow-[0_40px_80px_rgba(15,23,42,.08)]
-            "
+                mt-10
+                flex
+                flex-wrap
+                items-center
+                gap-5
+              "
             >
 
-              <div className="absolute inset-0 rounded-[42px] bg-gradient-to-br from-white/50 to-transparent pointer-events-none"></div>
 
-              <div className="absolute -inset-8 bg-[#DCE6FF] blur-[90px] opacity-40 rounded-full"></div>
+              <motion.a
+                href="#projects"
 
-              <img
-                src={heroImage}
-                alt="Arwa Developer"
+                whileHover={{
+                  y:-3,
+                }}
+
+                transition={{
+                  duration:.25,
+                }}
+
                 className="
-                relative
-                z-10
-                w-full
-                max-w-[620px]
-                object-contain
-                animate-[float_6s_ease-in-out_infinite]
-              "
-              />
+                  inline-flex
+                  h-14
+                  items-center
+                  gap-2
+                  rounded-full
+                  bg-[#111827]
+                  px-8
+                  text-base
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  transition-all
+                  hover:bg-[#1F2937]
+                "
+              >
+
+                View Projects
+
+                <ArrowUpRight
+                  size={18}
+                />
+
+              </motion.a>
+
+
+
+              <motion.a
+                href="#contact"
+
+                whileHover={{
+                  y:-3,
+                }}
+
+                transition={{
+                  duration:.25,
+                }}
+
+                className="
+                  inline-flex
+                  h-14
+                  items-center
+                  rounded-full
+                  border
+                  border-[#E5E7EB]
+                  bg-white
+                  px-8
+                  text-base
+                  font-semibold
+                  text-[#111827]
+                  shadow-sm
+                  transition-all
+                  hover:border-[#7C8DFF]
+                "
+              >
+
+                Contact
+
+              </motion.a>
+
 
             </div>
 
+
           </motion.div>
+
+          {/* RIGHT */}
+
+
+          <motion.div
+
+            initial={{
+              opacity:0,
+              x:40,
+            }}
+
+            animate={{
+              opacity:1,
+              x:0,
+            }}
+
+            transition={{
+              duration:.8,
+              delay:.15,
+            }}
+
+            className="
+              relative
+              flex
+              justify-center
+              lg:justify-end
+            "
+
+          >
+
+
+            {/* Glow Behind Image */}
+
+            <div
+              className="
+                absolute
+                h-[420px]
+                w-[420px]
+                rounded-full
+                bg-[#E8EEFF]
+                blur-[110px]
+                opacity-80
+              "
+            />
+
+
+
+            <motion.img
+
+              src={heroImage}
+
+              alt="Arwa Alneami"
+
+              whileHover={{
+                scale:1.04,
+                rotate:1,
+              }}
+
+              transition={{
+                duration:.4,
+              }}
+
+              className="
+                relative
+                z-10
+                w-full
+                max-w-[560px]
+                object-contain
+                drop-shadow-[0_30px_60px_rgba(15,23,42,.12)]
+                animate-[float_6s_ease-in-out_infinite]
+              "
+
+            />
+
+
+          </motion.div>
+
 
         </div>
 
+
       </div>
+
 
     </section>
   );
 }
+
 
 export default Hero;

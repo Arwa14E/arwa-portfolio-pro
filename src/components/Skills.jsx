@@ -8,6 +8,7 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 
+
 const skills = [
   {
     icon: Globe,
@@ -47,101 +48,214 @@ const skills = [
   },
 ];
 
+
 function Skills() {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden py-36 bg-white"
+      className="
+        relative
+        overflow-hidden
+        py-32
+        lg:py-40
+        bg-[#FAFAF8]
+      "
     >
-      {/* Background */}
 
-      <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#EEF3FF] blur-[140px] opacity-70"></div>
+      {/* Background Glow */}
 
-      <div className="absolute bottom-0 right-0 w-[420px] h-[420px] rounded-full bg-[#DDE8FF] blur-[170px] opacity-60"></div>
+      <div
+        className="
+          absolute
+          top-0
+          left-0
+          w-[380px]
+          h-[380px]
+          rounded-full
+          bg-[#EEF3FF]
+          blur-[150px]
+          opacity-70
+        "
+      />
+
+
+      <div
+        className="
+          absolute
+          bottom-0
+          right-0
+          w-[450px]
+          h-[450px]
+          rounded-full
+          bg-[#DCE6FF]
+          blur-[180px]
+          opacity-60
+        "
+      />
+
 
       <div className="container relative z-10">
+
 
         {/* Heading */}
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .7 }}
-          viewport={{ once: true }}
-          className="text-center"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: .7,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="
+            text-center
+          "
         >
 
-          <span className="uppercase tracking-[6px] text-[#7C8DFF] font-semibold">
+          <span
+            className="
+              uppercase
+              tracking-[6px]
+              text-[#7C8DFF]
+              font-semibold
+              text-sm
+            "
+          >
             Skills
           </span>
 
-          <h2 className="mt-5 text-5xl lg:text-6xl font-black tracking-[-2px] text-[#111827]">
+
+          <h2
+            className="
+              mt-5
+              text-5xl
+              lg:text-6xl
+              font-black
+              tracking-[-2px]
+              text-[#111827]
+            "
+          >
             Technologies I Use
           </h2>
 
-          <p className="mt-8 max-w-3xl mx-auto text-lg leading-9 text-[#64748B] text-center">
+          <p
+            className="
+              mt-7
+              max-w-3xl
+              mx-auto
+              text-lg
+              leading-9
+              text-[#64748B]
+            "
+          >
             I build modern, responsive and scalable web applications using
             the latest technologies with a strong focus on performance,
             maintainability and exceptional user experience.
           </p>
 
+
         </motion.div>
 
-        {/* Cards */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+
+        {/* Skills Cards */}
+
+
+        <div
+          className="
+            grid
+            md:grid-cols-2
+            lg:grid-cols-3
+            gap-8
+            mt-20
+          "
+        >
+
 
           {skills.map((skill, index) => {
 
             const Icon = skill.icon;
 
+
             return (
 
               <motion.div
+
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+
                 transition={{
                   duration: .6,
                   delay: index * .12,
                 }}
-                viewport={{ once: true }}
+
+                viewport={{
+                  once: true,
+                }}
+
+                whileHover={{
+                  y: -8,
+                }}
+
                 className="
-                group
-                bg-white/75
-                backdrop-blur-xl
-                rounded-[32px]
-                p-9
-                border
-                border-white
-                shadow-[0_20px_60px_rgba(15,23,42,.06)]
-                transition-all
-                duration-500
-                hover:-translate-y-3
-                hover:shadow-[0_35px_90px_rgba(15,23,42,.12)]
-              "
+                  group
+                  bg-white
+                  rounded-[32px]
+                  p-8
+                  border
+                  border-[#EDF0F6]
+                  shadow-[0_20px_60px_rgba(15,23,42,.05)]
+                  transition-all
+                  duration-500
+                  hover:shadow-[0_35px_90px_rgba(15,23,42,.12)]
+                "
               >
 
-                {/* Top */}
 
-                <div className="flex items-center justify-between">
+                {/* Top Section */}
+
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                  "
+                >
 
                   <div
                     className="
-                    w-20
-                    h-20
-                    rounded-[24px]
-                    bg-gradient-to-br
-                    from-[#EEF3FF]
-                    to-white
-                    shadow-md
-                    flex
-                    items-center
-                    justify-center
-                    transition
-                    duration-500
-                    group-hover:rotate-12
-                  "
+                      w-20
+                      h-20
+                      rounded-[24px]
+                      bg-gradient-to-br
+                      from-[#EEF3FF]
+                      to-white
+                      border
+                      border-[#EDF0F6]
+                      shadow-sm
+                      flex
+                      items-center
+                      justify-center
+                      transition-all
+                      duration-500
+                      group-hover:rotate-6
+                    "
                   >
 
                     <Icon
@@ -151,75 +265,128 @@ function Skills() {
 
                   </div>
 
+
                   <span
                     className="
-                    px-4
-                    py-2
-                    rounded-full
-                    bg-[#EEF3FF]
-                    text-[#7C8DFF]
-                    text-sm
-                    font-bold
-                  "
+                      px-4
+                      py-2
+                      rounded-full
+                      bg-[#EEF3FF]
+                      text-[#5A6BFF]
+                      text-sm
+                      font-bold
+                    "
                   >
                     {skill.level}
                   </span>
+
 
                 </div>
 
                 {/* Title */}
 
-                <h3 className="mt-8 text-[26px] font-black tracking-[-1px] text-[#111827]">
+                <h3
+                  className="
+                    mt-8
+                    text-2xl
+                    font-black
+                    tracking-[-1px]
+                    text-[#111827]
+                  "
+                >
                   {skill.title}
                 </h3>
 
+
                 {/* Description */}
 
-                <p className="mt-4 text-[15px] leading-8 text-[#64748B]">
+                <p
+                  className="
+                    mt-4
+                    text-[15px]
+                    leading-8
+                    text-[#64748B]
+                  "
+                >
                   {skill.stack}
                 </p>
 
+
+
                 {/* Progress */}
 
-                <div className="mt-8">
-
-                  <div className="flex justify-between text-sm text-[#64748B] mb-3">
-
-                    <span>Proficiency</span>
-
-                    <span>{skill.level}</span>
-
-                  </div>
+                <div
+                  className="
+                    mt-8
+                  "
+                >
 
                   <div
                     className="
-                    h-3
-                    rounded-full
-                    bg-[#EEF3FF]
-                    overflow-hidden
-                  "
+                      flex
+                      justify-between
+                      items-center
+                      mb-3
+                      text-sm
+                      text-[#64748B]
+                    "
+                  >
+
+                    <span>
+                      Proficiency
+                    </span>
+
+
+                    <span
+                      className="
+                        font-semibold
+                      "
+                    >
+                      {skill.level}
+                    </span>
+
+                  </div>
+
+
+                  <div
+                    className="
+                      h-3
+                      rounded-full
+                      bg-[#EEF3FF]
+                      overflow-hidden
+                    "
                   >
 
                     <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: skill.level }}
-                      viewport={{ once: true }}
+                      initial={{
+                        width: 0,
+                      }}
+
+                      whileInView={{
+                        width: skill.level,
+                      }}
+
+                      viewport={{
+                        once: true,
+                      }}
+
                       transition={{
                         duration: 1.2,
                         ease: "easeOut",
                       }}
+
                       className="
-                      h-full
-                      rounded-full
-                      bg-gradient-to-r
-                      from-[#7C8DFF]
-                      to-[#5D73FF]
-                    "
+                        h-full
+                        rounded-full
+                        bg-[#7C8DFF]
+                      "
                     />
 
                   </div>
 
+
                 </div>
+
 
               </motion.div>
 
@@ -227,11 +394,14 @@ function Skills() {
 
           })}
 
+
         </div>
 
       </div>
+
     </section>
   );
 }
+
 
 export default Skills;

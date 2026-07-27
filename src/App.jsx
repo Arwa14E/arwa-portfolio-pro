@@ -10,21 +10,44 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+
 function App() {
+
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
+
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1800);
 
+
     return () => clearTimeout(timer);
+
   }, []);
 
-  if (loading) return <LoadingScreen />;
+
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
+
 
   return (
-    <main className="min-h-screen bg-[#F8F8FC] text-[#1B1B2F] overflow-x-hidden">
+
+    <main
+      className="
+        min-h-screen
+        bg-[#FAFAF8]
+        text-[#111827]
+        overflow-x-hidden
+        selection:bg-[#DCE6FF]
+        selection:text-[#111827]
+      "
+    >
+
       <Navbar />
 
       <Hero />
@@ -40,8 +63,11 @@ function App() {
       <Contact />
 
       <Footer />
+
     </main>
+
   );
 }
+
 
 export default App;

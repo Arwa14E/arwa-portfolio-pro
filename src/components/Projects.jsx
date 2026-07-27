@@ -43,20 +43,56 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="py-32 px-8"
+      className="
+        relative
+        overflow-hidden
+        py-32
+        lg:py-40
+        bg-[#FAFAF8]
+      "
     >
 
-      <div className="max-w-7xl mx-auto">
+      {/* Background Glow */}
+
+      <div
+        className="
+          absolute
+          top-0
+          right-0
+          w-[450px]
+          h-[450px]
+          rounded-full
+          bg-[#EEF3FF]
+          blur-[170px]
+          opacity-60
+        "
+      />
+
+
+      <div className="container relative z-10">
 
 
         {/* Header */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-20"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: .6,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="
+            mb-20
+            text-center
+          "
         >
 
           <span
@@ -65,6 +101,7 @@ function Projects() {
               tracking-[6px]
               text-[#7C8DFF]
               font-semibold
+              text-sm
             "
           >
             Featured Projects
@@ -77,7 +114,6 @@ function Projects() {
               text-5xl
               lg:text-6xl
               font-black
-              leading-tight
               tracking-[-2px]
               text-[#111827]
             "
@@ -85,14 +121,14 @@ function Projects() {
             Selected Work
           </h2>
 
-
           <p
             className="
-              mt-8
+              mt-7
+              max-w-2xl
+              mx-auto
               text-lg
               leading-9
               text-[#64748B]
-              max-w-xl
             "
           >
             A collection of projects that reflect my development process,
@@ -105,7 +141,14 @@ function Projects() {
 
         {/* Completed Projects */}
 
-        <div className="grid md:grid-cols-2 gap-10">
+
+        <div
+          className="
+            grid
+            md:grid-cols-2
+            gap-10
+          "
+        >
 
 
           {projects.map((project, index) => (
@@ -116,65 +159,78 @@ function Projects() {
 
               initial={{
                 opacity: 0,
-                y: 50
+                y: 50,
               }}
 
               whileInView={{
                 opacity: 1,
-                y: 0
+                y: 0,
               }}
 
               transition={{
-                duration: 0.5,
-                delay: index * 0.1
+                duration: .5,
+                delay: index * .1,
               }}
 
               viewport={{
-                once: true
+                once: true,
               }}
 
               className="
-                group overflow-hidden
+                group
+                overflow-hidden
                 rounded-[32px]
                 bg-white
                 border
                 border-[#EDF0F6]
                 shadow-[0_20px_60px_rgba(15,23,42,.05)]
+                transition-all
+                duration-500
                 hover:-translate-y-3
                 hover:shadow-[0_35px_80px_rgba(15,23,42,.12)]
-                transition duration-500
-                cursor-pointer
               "
-
             >
 
 
               {/* Image */}
 
-              <div className="
-                overflow-hidden
-                h-[360px]
-                bg-[#F7F5F2]
-              ">
+              <div
+                className="
+                  relative
+                  overflow-hidden
+                  h-[360px]
+                  bg-[#F1F5F9]
+                "
+              >
 
                 <img
-
                   src={project.image}
-
                   alt={`${project.title} preview`}
-
                   className="
                     w-full
                     h-full
                     object-cover
-                    transition duration-500
+                    transition-transform
+                    duration-700
                     group-hover:scale-110
                   "
+                />
 
+
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-black/20
+                    to-transparent
+                    opacity-0
+                    group-hover:opacity-100
+                    transition
+                  "
                 />
 
               </div>
-
 
 
 
@@ -183,76 +239,85 @@ function Projects() {
               <div className="p-8">
 
 
-                <div className="flex justify-between items-center mb-4">
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    mb-5
+                  "
+                >
 
-
-                  <span className="
-                    text-sm
-                    text-[#556B5D]
-                    font-medium
-                  ">
+                  <span
+                    className="
+                      text-sm
+                      font-semibold
+                      text-[#7C8DFF]
+                    "
+                  >
                     Project {project.id}
                   </span>
 
 
                   <ArrowUpRight
-
+                    size={22}
                     className="
-                      text-[#556B5D]
+                      text-[#7C8DFF]
+                      transition-transform
                       group-hover:translate-x-1
                       group-hover:-translate-y-1
-                      transition
                     "
-
                   />
-
 
                 </div>
 
 
-
-                <h3 className="
-                  text-2xl
-                  font-bold
-                  mb-3
-                  text-[#111827]
-                ">
+                <h3
+                  className="
+                    text-2xl
+                    font-black
+                    text-[#111827]
+                  "
+                >
                   {project.title}
                 </h3>
 
-
-
-                <p className="
-                  text-gray-600
-                  leading-7
-                ">
+                <p
+                  className="
+                    mt-4
+                    text-[#64748B]
+                    leading-8
+                  "
+                >
                   {project.description}
                 </p>
 
 
 
-                <div className="
-                  flex
-                  flex-wrap
-                  gap-2
-                  mt-6
-                ">
+                {/* Tags */}
 
-                  {project.tags.map((tag)=>(
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    gap-2
+                    mt-6
+                  "
+                >
+
+                  {project.tags.map((tag) => (
 
                     <span
-
                       key={tag}
-
                       className="
                         px-4
                         py-2
                         rounded-full
-                        bg-[#F7F5F2]
+                        bg-[#EEF3FF]
+                        text-[#5A6BFF]
                         text-sm
-                        text-[#374151]
+                        font-medium
                       "
-
                     >
                       {tag}
                     </span>
@@ -263,27 +328,34 @@ function Projects() {
 
 
 
-                <button
+                {/* Button */}
 
+                <button
                   className="
                     mt-8
-                    flex
+                    inline-flex
                     items-center
-                    gap-2
-                    text-[#556B5D]
+                    gap-3
+                    rounded-full
+                    bg-[#111827]
+                    px-6
+                    py-3
+                    text-white
                     font-semibold
-                    group-hover:gap-4
                     transition-all
+                    duration-300
+                    hover:bg-[#374151]
+                    hover:-translate-y-1
                   "
-
                 >
 
                   View Project
 
-                  <ArrowUpRight size={18}/>
+                  <ArrowUpRight
+                    size={18}
+                  />
 
                 </button>
-
 
 
               </div>
@@ -298,29 +370,26 @@ function Projects() {
 
 
 
-
-
         {/* Upcoming Projects */}
 
 
         <motion.div
-
           initial={{
-            opacity:0,
-            y:40
+            opacity: 0,
+            y: 40,
           }}
 
           whileInView={{
-            opacity:1,
-            y:0
+            opacity: 1,
+            y: 0,
           }}
 
           transition={{
-            duration:0.6
+            duration: .6,
           }}
 
           viewport={{
-            once:true
+            once: true,
           }}
 
           className="
@@ -328,43 +397,45 @@ function Projects() {
             rounded-[32px]
             border
             border-dashed
-            border-[#556B5D]
-            bg-[#C9BEAE]/20
-            p-12
+            border-[#C7D2FE]
+            bg-[#EEF3FF]/60
+            p-10
+            lg:p-12
             text-center
           "
-
         >
 
-
-          <span className="text-5xl">
+          <span
+            className="
+              text-5xl
+            "
+          >
             🚀
           </span>
 
 
-
-          <h3 className="
-            text-3xl
-            font-bold
-            mt-5
-            text-[#111827]
-          ">
+          <h3
+            className="
+              mt-5
+              text-3xl
+              font-black
+              text-[#111827]
+            "
+          >
             Upcoming Projects
           </h3>
 
-
-
-          <p className="
-            text-gray-600
-            mt-3
-          ">
+          <p
+            className="
+              mt-3
+              text-[#64748B]
+            "
+          >
             مشاريع جديدة قادمة قريباً
           </p>
 
 
-
         </motion.div>
-
 
 
       </div>
