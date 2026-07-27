@@ -224,3 +224,15 @@ a{
   border-radius:999px;
 
 }
+
+.text-\[\#111827\] {
+  color: #1F2937 !important;
+}
+
+.bg-\[\#111827\] {
+  background-color: #7C8DFF !important;
+}
+
+.hover\:bg-\[\#1F2937\]:hover {
+  background-color: #5D73FF !important;
+}
